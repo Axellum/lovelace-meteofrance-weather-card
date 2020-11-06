@@ -24,16 +24,7 @@ const css = LitElement.prototype.css;
 
 const HELPERS = window.loadCardHelpers();
 
-const DefaultSensors = new Map([
-  ["cloudCoverEntity", "_cloud_cover"],
-  ["rainChanceEntity", "_rain_chance"],
-  ["freezeChanceEntity", "_freeze_chance"],
-  ["snowChanceEntity", "_snow_chance"],
-  ["uvEntity", "_uv"],
-  ["rainForecastEntity", "_next_rain"]
-])
-
-export class MeteofranceWeatherCardEditor extends LitElement {
+export class WeatherCardEditor extends LitElement {
   setConfig(config) {
     this._config = { ...config };
   }
@@ -64,6 +55,10 @@ export class MeteofranceWeatherCardEditor extends LitElement {
 
   get _forecast() {
     return this._config.forecast !== false;
+  }
+
+  get _hourly_forecast() {
+    return this._config.hourly_forecast !== false;
   }
 
   get _number_of_forecasts() {
@@ -105,6 +100,10 @@ export class MeteofranceWeatherCardEditor extends LitElement {
     return this._config.snowChanceEntity || "";
   }
 
+  get _thunderChanceEntity() {
+    return this._config.thunderChanceEntity || "";
+  }
+
   get _uvEntity() {
     return this._config.uvEntity || "";
   }
@@ -140,13 +139,14 @@ export class MeteofranceWeatherCardEditor extends LitElement {
           <!-- Primary weather entity -->
           ${this.renderWeatherPicker("Entity", this._entity, "entity")}
           <!-- Switches -->
-          <ul class="switches">
+          <div class="switches">
             ${this.renderSwitchOption("Show current", this._current, "current")}
             ${this.renderSwitchOption("Show details", this._details, "details")}
             ${this.renderSwitchOption("Show one hour forecast", this._one_hour_forecast, "one_hour_forecast")}
             ${this.renderSwitchOption("Show alert", this._alert_forecast, "alert_forecast")}
+            ${this.renderSwitchOption("Show hourly forecast", this._hourly_forecast, "hourly_forecast")}
             ${this.renderSwitchOption("Show forecast", this._forecast, "forecast")}
-          </ul>
+          </div>
           <!-- -->
           <paper-input
             label="Number of future forcasts"
@@ -185,7 +185,7 @@ export class MeteofranceWeatherCardEditor extends LitElement {
                 .hass="${this.hass}"
                 .value="${entity}"
                 .configValue="${configAttr}"
-                .includeDomains="${domain}"
+                domain-filter="${domain}"
                 @change="${this._valueChanged}"
                 allow-custom-entity
               ></ha-entity-picker>
@@ -194,7 +194,7 @@ export class MeteofranceWeatherCardEditor extends LitElement {
 
   renderSwitchOption(label, state, configAttr) {
     return html`
-      <li class="switch">
+      <div class="switch">
               <ha-switch
                 .checked=${state}
                 .configValue="${configAttr}"
@@ -202,21 +202,8 @@ export class MeteofranceWeatherCardEditor extends LitElement {
               ></ha-switch
               ><span>${label}</span>
             </div>
-          </li>
+          </div>
     `
-  }
-
-  _weatherEntityChanged(entityName) {
-    DefaultSensors.forEach(
-      (sensorSuffix, configAttribute) => {
-        const entity = "sensor." + entityName + sensorSuffix;
-        if (this.hass.states[entity] !== undefined)
-          this._config = {
-            ...this._config,
-            [configAttribute]: entity,
-          };
-      }
-    )
   }
 
   _valueChanged(ev) {
@@ -231,8 +218,6 @@ export class MeteofranceWeatherCardEditor extends LitElement {
       if (target.value === "") {
         delete this._config[target.configValue];
       } else {
-        if (target.configValue === "entity")
-          this._weatherEntityChanged(target.value.split('.')[1]);
         this._config = {
           ...this._config,
           [target.configValue]:
@@ -248,18 +233,13 @@ export class MeteofranceWeatherCardEditor extends LitElement {
       .switches {
         margin: 8px 0;
         display: flex;
-        flex-flow: row wrap;
-        list-style: none;
-        padding: 0;
+        justify-content: space-between;
       }
-
       .switch {
         display: flex;
         align-items: center;
-        width: 50%;
-        height: 40px;
+        justify-items: center;
       }
-
       .switches span {
         padding: 0 16px;
       }
@@ -267,4 +247,4 @@ export class MeteofranceWeatherCardEditor extends LitElement {
   }
 }
 
-customElements.define("meteofrance-weather-card-editor", MeteofranceWeatherCardEditor);
+customElements.define("weather-card-editor", WeatherCardEditor);
