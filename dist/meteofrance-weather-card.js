@@ -21,7 +21,6 @@ const weatherIconsDay = {
   exceptional: "!!",
 };
 
-
 const weatherIconsNight = {
   ...weatherIconsDay,
   clear: "night",
@@ -51,14 +50,14 @@ const windDirections = [
 ];
 
 const skycon2cn = {
-  clear: "Jour claire",
-  "clear-night": "Nuit claire",
+  clear: "Ciel dégagé",
+  "clear-night": "Nuit dégagé",
   cloudy: "Nuageux",
   fog: "Brouillard",
   hail: "Grèle",
   lightning: "Orage",
   "lightning-rainy": "Orage pluvieux",
-  partlycloudy: "partiellement nuageux",
+  partlycloudy: "Partiellement nuageux",
   pouring: "Pluie torrentielle",
   rainy: "Pluie",
   snowy: "Neige",
@@ -188,7 +187,6 @@ class MeteofranceWeatherCard extends LitElement {
 
   renderCurrent(stateObj) {
     this.numberElements++;
-
     return html`
         <div class="content">
           <div class="icon-image">
@@ -218,11 +216,12 @@ class MeteofranceWeatherCard extends LitElement {
                 <span> ${this.getUnit("temperature")}</span>
               </div>
               <div class="attribute">
-                ${this.renderMeteoFranceDetail(this.hass.states[this._config.detailEntity])}
+                ${this.renderMeteoFranceDetail(this.hass.states[this._config.detailEntity])
+                }
               </div>
             </div>
           </div>
-        </div><br>
+        </div>
     `;
   }
 
@@ -300,6 +299,7 @@ class MeteofranceWeatherCard extends LitElement {
     let [startTime, endTime] = this.getOneHourForecastTime(rainForecast);
 
     return html`
+    
       <div>
       <ul class="oneHourHeader">
       <li> ${startTime} </li>
@@ -564,8 +564,8 @@ class MeteofranceWeatherCard extends LitElement {
           min-width: 96px;
         }
         .icon-image > * {
-          flex: 0 0 100px;
-          height: 100px;
+          flex: 0 0 96px;
+          height: 96px;
         }
         .weather-icon {
           --mdc-icon-size: 64px;
@@ -613,7 +613,7 @@ class MeteofranceWeatherCard extends LitElement {
         }
         .attribute {
           white-space: nowrap;
-          list-style: none;
+        list-style: none;
         }
         .ha-icon {
           height: 18px;
@@ -785,4 +785,3 @@ class MeteofranceWeatherCard extends LitElement {
   }
 }
 customElements.define("meteofrance-weather-card", MeteofranceWeatherCard);
-
