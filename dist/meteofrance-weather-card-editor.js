@@ -273,4 +273,4 @@ export class MeteofranceWeatherCardEditor extends LitElement {
   }
 }
 
-customElements.define("meteofrance-weather-card-editor", MeteofranceWeatherCardEditor);
+customElements.define("Meteo-France-Ax-editor", MeteofranceWeatherCardEditor);
