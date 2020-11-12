@@ -70,11 +70,11 @@ const skycon2cn = {
 
 window.customCards = window.customCards || [];
 window.customCards.push({
-  type: "meteofrance-weather-card",
-  name: "Carte Météo France par HACF",
+  type: "Meteo-France-Ax",
+  name: "Meteo-France-Ax",
   description: "Carte pour l'intégration Météo France.",
   preview: true,
-  documentationURL: "https://github.com/hacf-fr/lovelace-meteofrance-weather-card",
+  documentationURL: "https://github.com/Axellum/Meteo-France-Ax",
 });
 
 const fireEvent = (node, type, detail, options) => {
@@ -784,4 +784,4 @@ class MeteofranceWeatherCard extends LitElement {
     `;
   }
 }
-customElements.define("meteofrance-weather-card", MeteofranceWeatherCard);
+customElements.define("Meteo-France-Ax", MeteofranceWeatherCard);
