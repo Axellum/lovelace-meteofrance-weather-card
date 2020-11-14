@@ -18,7 +18,6 @@ if (
   customElements.define("ha-switch", customElements.get("paper-toggle-button"));
 }
 
-
 const LitElement = customElements.get("hui-masonry-view") ? Object.getPrototypeOf(customElements.get("hui-masonry-view")) : Object.getPrototypeOf(customElements.get("hui-view"));
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
@@ -110,11 +109,9 @@ export class MeteofranceWeatherCardEditor extends LitElement {
     return this._config.uvEntity || "";
   }
 
-
   get _detailEntity() {
     return this._config.detailEntity || "";
   }
-
 
   firstUpdated() {
     HELPERS.then(help => {
@@ -188,7 +185,7 @@ export class MeteofranceWeatherCardEditor extends LitElement {
 
   renderPicker(label, entity, configAttr, domain) {
     return html`
-                                      <ha-entity-picker
+              <ha-entity-picker
                 label="${label}"
                 .hass="${this.hass}"
                 .value="${entity}"
@@ -273,4 +270,4 @@ export class MeteofranceWeatherCardEditor extends LitElement {
   }
 }
 
-customElements.define("Meteo-France-Ax-editor", MeteofranceWeatherCardEditor);
+customElements.define("meteofrance-weather-card-editor", MeteofranceWeatherCardEditor);
