@@ -3,11 +3,11 @@
 Iconnes supplémentaires pour la carte ![lovelace-meteofrance-weather-card](https://github.com/hacf-fr/lovelace-meteofrance-weather-card).
 
 Récupèrez un ou les dossiers icons_2 et icons_3 (dans le dossiers « dist »).
-Copie les dans un dossier de votre www. Ensuite pointer le dossier dans Icons location:
+Copie les dans un dossier de votre www. Ensuite pointer le dossier dans "Icons location":
 
 ![](/ajout.png)
 
-Vous pouvez les essayer plus simplement en mettant ces adresses sur « Icons location » (mais ajoutez les en locale si vous les utilisez):
+Vous pouvez les essayer plus simplement en mettant ces adresses dans "Icons location" (mais ajoutez les en locale si vous les utilisez):
 
 http://axellum.free.fr/Lovelace/icons_2/
 
