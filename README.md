@@ -1,2 +1,55 @@
-# lovelace-meteofrance-weather-card
-Iconnes supplémentaires pour la carte lovelace-meteofrance-weather-card.
+# Lovelace meteofrance weather card Icones
+
+Iconnes supplémentaires pour la carte ![lovelace-meteofrance-weather-card](https://github.com/hacf-fr/lovelace-meteofrance-weather-card).
+
+
+Les icônes fixe viennent de https://icon-icons.com/fr/pack/The-Weather-is-Nice-Today/1370, création de Laura Reen. J'ai parfois apporté de légère modifications.
+
+Les icônes animés bleus sont issus de https://www.amcharts.com/free-animated-svg-weather-icons/, avec modifications sur certain pour les compléter.
+
+Les icônes animés blancs arrivent de https://github.com/fineemb/lovelace-colorfulclouds-weather-card, avec modifications de positionnement.
+
+### Icones animés bleus:
+![](/dist/icons/day.svg)
+![](/dist/icons/night.svg)
+
+![](/dist/icons/windy-night.svg)
+![](/dist/icons/windy.svg)
+![](/dist/icons/fog.svg)
+![](/dist/icons/fog1.svg)
+
+
+![](/dist/icons/cloudy.svg)
+![](/dist/icons/cloudy-day-3.svg)
+
+![](/dist/icons/cloudy-night-3.svg)
+![](/dist/icons/lightning-rainy.svg)
+![](/dist/icons/rainy-5.svg)
+![](/dist/icons/rainy-6.svg)
+
+
+![](/dist/icons/rainy-7.svg)
+![](/dist/icons/snowy-6.svg)
+![](/dist/icons/snowy-rainy.svg)
+![](/dist/icons/thunder.svg)
+
+
+### Icones animés blancs:
+![](/dist/icons_3/day.svg)
+![](/dist/icons_3/night.svg)
+![](/dist/icons_3/windy-night.svg)
+![](/dist/icons_3/windy.svg)
+
+![](/dist/icons_3/fog.svg)
+![](/dist/icons_3/cloudy.svg)
+![](/dist/icons_3/cloudy-day-3.svg)
+![](/dist/icons_3/cloudy-night-3.svg)
+
+![](/dist/icons_3/lightning-rainy.svg)
+![](/dist/icons_3/rainy-5.svg)
+![](/dist/icons_3/rainy-6.svg)
+![](/dist/icons_3/rainy-7.svg)
+
+![](/dist/icons_3/snowy-6.svg)
+![](/dist/icons_3/snowy-rainy.svg)
+![](/dist/icons_3/thunder.svg)
