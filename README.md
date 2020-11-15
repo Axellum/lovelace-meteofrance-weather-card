@@ -64,3 +64,35 @@ Les icônes animés blancs arrivent de https://github.com/fineemb/lovelace-color
 ![](/dist/icons_3/snowy-6.svg)
 ![](/dist/icons_3/snowy-rainy.svg)
 ![](/dist/icons_3/thunder.svg)
+
+Note:
+Utilisation possible sur d'autres carte avec ces réglages:
+
+   ```yaml
+const weatherIconsDay = {
+  clear: "day",
+  "clear-night": "night",
+  cloudy: "cloudy",
+  fog: "fog",
+  hail: "rainy-7",
+  lightning: "thunder",
+  "lightning-rainy": "lightning-rainy",
+  partlycloudy: "cloudy-day-3",
+  pouring: "rainy-6",
+  rainy: "rainy-5",
+  snowy: "snowy-6",
+  "snowy-rainy": "snowy-rainy",
+  sunny: "day",
+  windy: "windy",
+  "windy-variant": "windy",
+  exceptional: "!!",
+};
+
+const weatherIconsNight = {
+  ...weatherIconsDay,
+  clear: "night",
+  sunny: "night",
+  partlycloudy: "cloudy-night-3",
+  "windy-variant": "cloudy-night-3",
+};
+   ```
