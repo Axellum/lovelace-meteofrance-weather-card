@@ -13,6 +13,7 @@ http://axellum.free.fr/Lovelace/icons_2/
 
 http://axellum.free.fr/Lovelace/icons_3/
 
+Note: Ces adresses ne marchent pas dans un butineur, mais fonctionnent dans la carte.
 
 Les icônes fixe viennent de https://icon-icons.com/fr/pack/The-Weather-is-Nice-Today/1370, création de Laura Reen. J'ai parfois apporté de légère modifications.
 
