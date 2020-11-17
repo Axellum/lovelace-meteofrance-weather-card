@@ -8,11 +8,11 @@ Copie les dans un dossier de votre www. Ensuite pointer le dossier dans "Icons l
 ![](/ajout.png)
 
 Vous pouvez les essayer plus simplement en mettant ces adresses dans "Icons location" (mais ajoutez les en locale si vous les utilisez):
-
+   ```yaml
 http://axellum.free.fr/Lovelace/icons_2/
 
 http://axellum.free.fr/Lovelace/icons_3/
-
+   ```
 Note: Ces adresses ne marchent pas dans un butineur, mais fonctionnent dans la carte.
 
 Les icônes fixe viennent de https://icon-icons.com/fr/pack/The-Weather-is-Nice-Today/1370, création de Laura Reen. J'ai parfois apporté de légère modifications.
